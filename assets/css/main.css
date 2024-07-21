@@ -20,9 +20,10 @@ body {
 
 /* Container styling */
 .container {
+    background-color: ;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
+
     width: 100%; /* Ensure it takes full width */
 }
 
@@ -60,6 +61,7 @@ header nav ul li {
 header nav ul li a {
     font-size: var(--navbar-font-size);
     color: var(--Main-color);
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -70,6 +72,34 @@ header nav ul button {
     border: 1px solid var(--Main-color);
     color: var(--Main-color);
     width: 149px;
+}
+
+/* Mobile navigation */
+header nav ul[data-visible="true"] {
+    display: none;
+}
+
+header nav ul[data-visible="true"] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--Main-color);
 }
 
 /* Signup button styling and animations */
@@ -255,7 +285,6 @@ header nav ul button {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 20px 0; /* Adjust margin for spacing */
 }
 
 .hero-section-img img {
@@ -273,13 +302,19 @@ header nav ul button {
 }
 
 /* Expanding services section */
+
+.services{
+    width: 100%;
+    background-color: #FEF3C7;
+}
+
 .expanding-services {
     display: flex;
     flex-direction: column; /* Stack items vertically on smaller screens */
     gap: 40px; /* Adjust gap for smaller screens */
     align-items: center;
     justify-content: center;
-    background-color: #FEF3C7;
+    
     font-family: var(--Main-font);
     padding: 80px 20px;
 }
@@ -310,7 +345,7 @@ header nav ul button {
 
 @media (max-width: 768px) {
     header nav {
-        padding: 20px 40px; /* Adjust padding for smaller screens */
+        padding: 16px 48px; /* Adjust padding for smaller screens */
     }
     
     header nav ul {
@@ -319,6 +354,78 @@ header nav ul button {
     }
 
     .hero-section {
-        padding: 40px 20px; /* Adjust padding for smaller screens */
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        padding: 48px 16px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-section-img img {
+        width: 361px;
+    }
+ 
+    .hero-section-text {
+        text-align: center;
+        display: flex;
+        gap: 32px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-section-text p {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .hero-section-text-buttons {
+        justify-content: center;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    header{
+        width: 100%;
+        position: fixed;
+        background-color: white;
+        z-index: 99;
+        padding: 0;
+    }
+
+    header nav{
+        padding: 16px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        position: absolute;
+      justify-content: center;
+        left: 0;
+        width: 100%;
+        right: 0;
+        background-color: white;
+        border-top: 1px solid var(--Main-color);
+        padding: 16px;
+        gap: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav ul[data-visible="false"] {
+        display: none;
+    }
+    .expanding-services{
+        gap: 32px;
+    }
+    .expanding-services .expanding-services-card {
+        width: 100%;
+        max-width: 373px;
+        display: flex;
+        flex-direction: column;
+        
+        gap: 16px;
+        height: auto;
+        text-align: center;
+        align-items: center;
     }
 }
