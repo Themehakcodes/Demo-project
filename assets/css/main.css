@@ -357,6 +357,7 @@ header nav ul[data-visible="true"] {
         justify-content: center;
         align-items: center;
         gap: 32px;
+        margin-top:20px;
         padding: 48px 16px; /* Adjust padding for smaller screens */
     }
 
@@ -375,6 +376,10 @@ header nav ul[data-visible="true"] {
     .hero-section-text p {
         font-size: 18px;
         font-weight: 500;
+    }
+    .hero-section-text h2{
+        justify-content: center;
+        text-align: center;
     }
 
     .hero-section-text-buttons {
